@@ -1,0 +1,186 @@
+PRACTICAL NO.2
+AIM: Basic Commands in Linux
+• su: Switch user. When used with a hyphen (su -), it changes to the superuser (root) and simulates a full
+login, including changing to the root user's home directory and loading the root user's environment
+variables.
+• whoami: Displays the current logged-in username.
+• hostname: Shows or sets the system's hostname.
+• date: Displays or sets the system date and time.
+• time: Measures the duration of time a command takes to execute.
+• history: Displays the history of commands typed in the current session.
+• history -c: Clears the current session's command history.
+• cat > filename: Creates a new file or overwrites an existing file named filename and allows you to input
+text directly into the file. Press Ctrl+D to save and exit.
+• cat filename: Displays the contents of filename.
+• tac filename: Displays the contents of filename in reverse order (last line first).
+• head filename: Displays the first 10 lines of filename.
+• tail filename: Displays the last 10 lines of filename.
+• head -2 filename: Displays the first 2 lines of filename.
+• tail -5 filename: Displays the last 5 lines of filename.
+
+PRACTICAL NO.3
+A) Create a user xyz, a group g1 using commands and add user xyz to group g1.
+• useradd xyz → used to add user “xyz”
+• passwd xyz → used to set password for user xyz
+• groupadd g1 → used to create group with name “g1”
+• usermod -g g1 xyz → used to store user “xyz” in group “g1” (here -g denotes group)
+• id xyz → used to get user information along with it’s group
+• userdel -r xyz → to remove user along with it’s home directory (-r is used to remove user along with home
+directory)
+• groupdel g1 → to remove group
+• cat /etc/passwd → to view all user configuration details
+B) Create two directories
+1) /data/sales
+2) /data/support
+change the group ownership of these directories to group g1.
+• mkdir -p /data/sales /data/support → to create directories with complete path
+• -p → complete path name
+• chgrp g1 /data/sales /data/support → to change the group ownership of directories form root
+user to group “g1”
+
+PRACTICAL NO.4
+Setting up NFS file server
+• rpm -qa | grep nfs → displays all packages related to nfs
+• -qa → query all
+• grep → pattern matching with nfs related packages
+• ifconfig eth0 192.168.1.3 netmask 255.255.255.0 up → to configure interface eth0s
+• Configuration file available in all etc directories
+• vim /etc/exports → to edit the exports config file (i to start & exit from insert mode, the :wq to
+save & exit)
+• service nfs restart → to restart nfs service
+Go to Wire networks → and enable “System eth0”
+• w → save
+• q → exit
+• service iptables stop → it is used to stop the firewall
+• showmount -e 192.168.1.3 →
+• service vsftpd stop → to stop ftp (file transfer protocol service)
+• vs → virtual
+• d → daemon
+• service vsftpd status → to check ftp status
+• chmod -R 777 /home/servernfs
+• chmod → change permissionss
+• -R → recursively apply every thing
+• 777 → read, write, execute permissions
+
+PRACTICAL NO.5
+A) Start a job and move a job from foreground to background.
+system-config-users → used to manage user accounts
+It shows that the user manager is the foreground process here
+Ctrl + Z → to suspend the process(As you can see the User Manager panel is now blank)
+bg → to run the process in the background
+bg → to run the process in the background
+B) Use top command and change niceness of the processes
+top → provides real time view of system activity
+C) Create hard link and symbolic link for files and folders and check the
+differences
+Create a directory and a file using “mkdir” and “touch” command → create their hard link and symbolic link
+ln -s → to create symbolic link
+ln → to create hard link
+D) Create a backup of files and folders
+du → disk uses
+-sh → show disk uses in human readable format
+gzip → to reduce the size of the file
+tar -cvf back.tar → used to create a tar archive named back.tar and add the files f1, f2, and f3 to it.
+ tar: This is the tar command, which is used to create and manipulate tar archives.
+ -c: This option tells tar to create a new archive.
+ -v: This option tells tar to be verbose, meaning it will print information about the files being added to the archive.
+ -f: This option specifies the name of the archive file to be created.
+
+PRACTICAL NO.6
+A) Mount and unmount USB flash drives using commands
+Connect a USB drive to your device → In RHEL select “Connect to a virtual machine” and the name of the virtual
+machine → click “OK”
+Now the USB drive has been mounted on your virtual machine
+df → This command will show information about all mounted file systems
+mount -t vfat /dev/sdb1 t → to mount the file system on the device /dev/sdb1 to the directory t.
+umount /dev/sdb1 → to unmount the file system on the device /dev/sdb1
+B) Schedule a cron job and send an email message in every one minute from normal user to
+root user.
+crontab → to manage cron jobs
+-e → opens a text editor to edit your crontab file
+Go to Computer → Filesystem → var →spool → mail
+There you can see the mail received from the tyit user to the root user
+
+PRACTICAL NO.8
+A) Configure Apache web server
+rpm -qa | grep http : used to check whether the http packages are installed or not.
+Then use chkconfig httpd on to on the httpd service
+Use gedit sample.html to create an html file for execution.
+After the sample.html is edited we need to restart the http service using service httpd restart
+Now go to Application→ Internet→ Konqueror to open the browser.
+Copy paste the file path to the browser search and execute the file.
+B) Write a script monitor activity on Apache web server, script should also start the
+Apache web server if it is not running.
+Use gedit test.sh to create shell file.
+Create a program to run counter infinitely using while loop
+ps aux: process status for all user processes
+grep http: to find all the files related to http
+grep -v grep > /dev/null: to redirect all the errors to the null folder in device folder
+Open another terminal to stop httpd service
+
+PRACTICAL NO .9.
+AIM: Setting up a Samba server
+First go to RHEL_6.0 Disk and install samba packages
+“rpm -ivh samba*” command is used to directly install the samba packages through terminal
+Now check the installed samba packages
+Right Click on communication icon → Edit Connections
+Click “Add”
+Go to IPv4 Settings and select “Manual” Method
+Click on “Add” and add the Addresses → Click on “Apply” button to apply the network settings
+Now check whether the Network is added or not using “ifconfig” command
+If ip address is not set then use “ifconfig eth0 192.168.1.3 netmask 255.255.255.0 up”
+command. Then use “ifconfig” command to check the ip address
+Now next step:
+Go to “Control Panel > Network and Internet > Network Connections → click on” and
+perform the steps in the Windows operating system
+Click on “OK” to save all the changes.
+Now go to VMWare and perform the following :
+Use CTRL + D to Save the file edited using “cat” command
+Now change the permissions of the files created in tyit folder
+Now use “vim /etc/samba/smb.conf” command to edit the configuration file
+Without going in insert mode use “:set nu” command in command mode (to set numbers in file)
+Now scroll down and go to number 74 and edit “MYGROUP” to “WORKGROUP” on number 79 remove the semi colon “;” and change the ip addresses
+On line number 80 remove ; & change the ip address to allow the number of users
+Now copy the contents of from line number 282 to to 288 and paste them on the next line.
+Then make changes to the code
+testparm → to test parameters
+setenforce 0 → gives temporary read only permission
+getsebool -a | grep samba → to check properties
+setsebool → to set properties
+Now start and restart the smb services
+Now add a new user “test” and set password “test” (to avoid confusion). Then restart the smb services
+smbclient //192.168.1.3/home/tyit -U test → to send the complete tyit directory to the user
+Once the smb services are start now we will start the network services
+Service nmb start → to start the network services
+Now go to Windows → open “run” → enter “ping 192.168.1.3 -t” (ip address of linux machine)
+ping → used to check the connection between the linux and windows operating system
+if the connection is established, the output will be as given below and if the connection is not established then “request timeout” will be displayed
+-t → for testing the connection
+
+PRACTICAL NO.10
+Aim: Configure DHCP Server in Linux.
+• First go to RHEL_6.0 Disk and install DHCP packages 
+• Check whether the DHCP package is installed or not and check the Hostname. 
+• setup  shows network configuration window 
+• select “Network configuration”  “Device configuration”  select the device 
+• Remove the “*” from use DHCP, to remove the “*” press spacebar, then enter the IP addresses 
+• Press tab key and enter to save the changes 
+ifdown eth0  to disable network connection
+• ifup eth0  to enable network connection 
+• If the ip address is not activated or deactivated using the terminal then use the following steps:
+• Go to wired networks  VPN Connections  Configure VPN  Select “Wired”  Click on
+“System eth0”  click “Edit” 
+• Go to IPv4 Settings and perform the changes 
+• Or else use “ifconfig eth0 192.168.1.3 netmask 255.255.255.0 up” command to activate the
+network connection
+• Copy file and then paste is to another location
+• Go to Computer > Filesystem > usr > share >doc > dhcp-4.1.1 >
+• :set nu > to set numbers to the configuration file
+• Change the domain name on line number 7, on line number 8 add the new domain, and remove
+the comment on line number 8. 
+• Comment line 27 and 28 
+• Assign the subnet and netmask addresses, set the range for DHCP addresses, and comment out
+the line number 34 
+Save and quit the vim editor
+Create a clone of the RHEL 6
+Footer
