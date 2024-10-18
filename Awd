@@ -1,0 +1,744 @@
+PRACTICAL NO.1
+A). Create an application to print on screen the output of adding, subtracting, multiplying and dividing two numbers entered by the user in C#. 
+using System;
+using System.Collections.Generic; using System.Linq; using System.Text;
+using System.Threading.Tasks;
+
+namespace Add
+{
+	internal class Program
+	{
+	static void Main(string[] args)
+	{
+	int a, b;
+            Console.Write("enter value for a:");            
+ a=Convert.ToInt32(Console.ReadLine());         	
+Console.Write("enter value for b:");             
+b=Convert.ToInt32(Console.ReadLine());         
+Console.WriteLine("Addition is: "+(a+b));
+Console.WriteLine("Subtraction is: "+(a-b)); 
+            Console.WriteLine("Multiplication is: "+(a*b));
+            Console.WriteLine("Division is: "+(a/b));
+            Console.WriteLine("Iqraa T056");
+	Console.ReadKey();
+	}
+	}
+}
+
+B.)Create an application to print Floyd’s triangle till n rows in C#. 
+
+
+using System;
+namespace practical_1 {
+    class Floyd_Triangle {
+        public static void Main(string[] args)
+        {
+            int i ,j ,val = 1;
+            Console.Write("Enter value: ");
+            int n=Convert.ToInt32(Console.ReadLine());
+            for (i = 1; i <= n; i++) {
+                for (j = 1; j <= i; j++)
+                {
+                    Console.Write(val+"");
+                    val++;
+                }
+                Console.WriteLine("");
+            }
+            Console.WriteLine("Iqraa T056”);
+            Console.ReadKey();
+        }}}
+
+ C.) Create an application to demonstrate following operation 
+i). Generate Fibonacci series. 
+using System; using System.Collections.Generic; using System.Linq; using System.Text;
+using System.Threading.Tasks;
+
+namespace Fibo
+{
+	internal class Program
+	{
+	static void Main(string[] args)
+	{
+	int n1 = 0, n2 = 1, n3, i, number;
+            Console.Write("Enter the number of elements: ");         	
+number = int.Parse(Console.ReadLine());             
+Console.Write(n1 + "" + n2 + "");  	
+	for (i = 2; i < number; ++i)	
+	{
+                n3 = n1 + n2;                
+ Console.Write(n3 + "");
+                n1 = n2;             	
+n2 = n3;
+	}
+            Console.WriteLine("Iqraa T056");
+	Console.ReadKey();  
+	}
+	} } 
+ii). Test for prime numbers.
+using System; using System.Collections.Generic;
+ using System.Linq; 
+using System.Text;
+using System.Threading.Tasks;
+
+namespace Prime
+{
+	internal class Program
+	{
+	static void Main(string[] args)
+	{
+	int flag = 0, m, n, i;
+            Console.WriteLine("enter a number");
+	n=Convert.ToInt32(Console.ReadLine());         	
+                m = n / 2;
+	for(i=2;i<=m;i++)
+{             	if(i%n==0)
+	{
+                    Console.WriteLine("Not a prime number");
+                    flag = 1;                  
+                     break;
+                }         	
+              }         	
+             if(flag==0)             	
+{
+                Console.WriteLine("Is a prime number");
+	}
+            Console.WriteLine("Iqraa T056");
+	Console.ReadKey();
+	            }
+	} } 
+
+Practical – 2
+A) Create a simple application to demonstrate the concepts boxing and unboxing.
+
+boxingcode:-
+using System;
+using System.Collections.Generic; 
+using System.Linq; using System.Text;
+using System.Threading.Tasks;
+
+namespace Calculator
+{
+	internal class Program
+	{
+	static void Main(string[] args)
+	{
+int num = 2020;         
+object obj = num;         	
+num = 100;
+	Console.WriteLine("Value type of num :" + num);
+	Console.WriteLine("value type of obj:" + obj);
+	Console.WriteLine("Iqraa T056");
+	Console.ReadKey();
+	}
+	}
+} 
+Unboxingcode:-
+Input:
+using System;
+class Unboxing
+{
+    static public void Main()
+    {
+        double d = 400.32;
+        int num = (int)d;
+
+        Console.WriteLine("Value of d is : " + d);
+        Console.WriteLine("Value of num is : " + num);
+        Console.WriteLine("Iqraa T056");
+        Console.ReadKey();
+    }
+}
+
+B.) Create a simple application to perform addition and subtraction using delegate.
+using System; using System.Collections.Generic; using System.Linq;
+using System.Text; using System.Threading.Tasks;
+
+namespace ConsoleApp3
+{
+	internal class Program
+	{
+	public delegate void MyDelegate(int a, int b);
+
+	class ABC
+	{
+	public void Addition(int a, int b)
+	{
+                Console.WriteLine("Addition: " + (a + b));
+	}
+	public void Subtraction(int a, int b)
+	{
+                Console.WriteLine("Subtraction: " + (a - b));
+	}
+	}
+
+	class xyz
+{
+	static void Main(string[] args)
+	{
+	ABC a = new ABC();
+	MyDelegate m1 = new MyDelegate(a.Addition);                 
+MyDelegate m2 = new MyDelegate(a.Subtraction);             	
+m1(10, 5);             	m2(6, 5);
+                Console.WriteLine("Iqraa T056");
+                Console.ReadKey();
+	}
+	}
+	}
+}
+
+
+c). Create a simple application to demonstrate use of the concepts of interfaces.
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+interfaceIAnimal
+{
+void AnimalSound();
+}
+classtiger : IAnimal
+{
+publicvoid AnimalSound()
+    {
+Console.WriteLine("tiger : tiger is sleeping");
+    }
+}
+classTest
+{
+publicstaticvoid Main(string[] args)
+    {
+tiger Mytiger = newtiger();
+        Mytiger.AnimalSound();
+Console.WriteLine("iqraa T056");
+Console.ReadKey();
+    }
+}
+
+Practical – 3
+
+A).Create a simple web page with various server controls to demonstrate setting and use of their properties. (Example: AutoPostBack) 
+using System;
+using System.Collections.Generic; 
+using System.Linq; using System.Web; 
+using System.Web.UI;
+using System.Web.UI.WebControls;
+namespace Prac3
+{
+	public partial class WebForm1 : System.Web.UI.Page
+	{
+	protected void Page_Load(object sender, EventArgs e)
+	{
+
+	}
+Protected void btndisplay_Click(object sender,EventArgs e)
+{
+	if (chkbold.Checked == true)
+	{
+	lblDisplay.Font.Bold = true;
+            }         	else
+	{
+	lblDisplay.Font.Bold = false;
+	}
+	if(chkitalic.Checked == true)
+	{
+	lblDisplay.Font.Italic = true;
+            }         	else
+	{
+	lblDisplay.Font.Italic = false;
+	}
+	if(chkunderline.Checked == true)
+	{
+	lblDisplay.Font.Underline = true;
+            }         	else
+	{
+	lblDisplay.Font.Underline = false;
+	}
+	if(rbred.Checked == true)
+	{
+	lblDisplay.ForeColor = System.Drawing.Color.Red;
+}
+	else if(rbgreen.Checked == true)
+	{
+	lblDisplay.ForeColor = System.Drawing.Color.Green;
+            }         	else
+	{
+	lblDisplay.ForeColor = System.Drawing.Color.Pink;
+	}
+	lblDisplay.Text = TextBox1.Text + "\n" + TextBox2.Text; 
+	}
+	}
+} 
+
+b).Create a simple application to demonstrate your vacation using calendar control. 
+Code:
+using System;
+using System.Collections.Generic; 
+using System.Linq; 
+using System.Web; 
+using System.Web.UI;
+using System.Web.UI.WebControls;
+
+namespace WebApplication2
+{
+	public partial class WebForm1 : System.Web.UI.Page
+{
+	protected void Page_Load(object sender, EventArgs e)
+	{
+	}
+	protected void Calendar1_SelectionChanged(object sender, EventArgs e)
+	{
+            Calendar1.SelectedDayStyle.BackColor=System.Drawing.Color.Red;
+            Calendar1.SelectedDayStyle.ForeColor=System.Drawing.Color.Green;
+	}
+
+	protected void Calendar1_DayRender(object sender, DayRenderEventArgs e)
+	{
+	if (e.Day.Date.Year == 2024 && e.Day.Date.Month == 8 && e.Day.Date.Day == 24)
+	{
+                Label l1= new Label();                 
+l1.Text = "<br>Ganpati";             	
+e.Cell.Controls.Add(l1);
+	}
+	if (e.Day.Date.Year == 2024 && e.Day.Date.Month == 8 && e.Day.Date.Day == 26)
+	{
+                Label l1 = new Label();              
+   l1.Text = "<br>Birthday";             	
+e.Cell.Controls.Add(l1);
+	}
+	}
+	protected void Button1_Click(object sender, EventArgs e)
+	{
+            TimeSpan ts = Calendar1.SelectedDate-Calendar2.SelectedDate;         	Label1.Text = ts.TotalDays.ToString();
+}
+	}
+} 
+ c).Demonstrate the use of Treeview operations on the web form.
+Employee
+<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="Employee.aspx.cs"
+Inherits="WebApplication3.Employee" %>
+
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head runat="server">
+	<title></title>
+</head>
+<body>
+	<form id="form1" runat="server">
+	<div>
+	<asp:Label ID="Label1" runat="server" Text="Employee"></asp:Label></asp:Label>
+	</div>
+	</form>
+</body>
+</html>
+
+Upload Resume
+<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="Upload
+Resume.aspx.cs" Inherits="WebApplication3.Upload_Resume" %>
+
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head runat="server">
+	<title></title>
+</head>
+<body>
+	<form id="form1" runat="server">
+	<div>
+	<asp:Label ID="Label1" runat="server" Text="Upoad
+Resume"></asp:Label></asp:Label>
+	</div>
+	</form>
+</body>
+</html>
+
+About us 
+<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="About us.aspx.cs"
+Inherits="WebApplication1.About_us" %>
+
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head runat="server">
+	<title></title>
+</head>
+<body>
+	<form id="form1" runat="server">
+	<div>
+	<asp:Label ID="Label1" runat="server" Text="About us page"></asp:Label>
+	</div>
+	Sanika T010
+	</form>
+</body></html>
+
+PRACTICAL NO.4
+a). Create a registration for, to demonstrate use of various validation controls.
+ UnobtrusiveValidationMode:
+Inside Configuration: <appSettings>
+<add key="ValidationSettings:UnobtrusiveValidationMode" value="None"/>
+</appSettings>
+
+Code:
+<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="WebForm1.aspx.cs" Inherits="Validation.WebForm1" %>
+
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head runat="server">
+	<title></title>
+</head>
+<body>
+<form id="form1" runat="server">
+	<div>
+	Enter Password:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+	<asp:TextBox ID="TextBox1" runat="server" TextMode="Password"></asp:TextBox>
+	<asp:RequiredFieldValidator ID="RequiredFieldValidator1" runat="server"
+ControlToValidate="TextBox1" ErrorMessage="Empty"></asp:RequiredFieldValidator>
+	<br />
+	Confirm Password:&nbsp;
+	<asp:TextBox ID="TextBox2" runat="server" TextMode="Password"></asp:TextBox>
+	<asp:RequiredFieldValidator ID="RequiredFieldValidator2" runat="server"
+ControlToValidate="TextBox2" ErrorMessage="Empty"></asp:RequiredFieldValidator>
+&nbsp;<asp:CompareValidator ID="CompareValidator1" runat="server"
+ControlToCompare="TextBox1" ControlToValidate="TextBox2" ErrorMessage="Not
+Matched"></asp:CompareValidator>
+	<br />
+	Email
+ID:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbs p;&nbsp;&nbsp;&nbsp;
+	<asp:TextBox ID="TextBox3" runat="server" TextMode="Email"></asp:TextBox>
+	<asp:RequiredFieldValidator ID="RequiredFieldValidator3" runat="server"
+ControlToValidate="TextBox3" ErrorMessage="Empty"></asp:RequiredFieldValidator>
+&nbsp;<asp:RegularExpressionValidator ID="RegularExpressionValidator1" runat="server"
+ControlToValidate="TextBox3" ErrorMessage="Kindly enter correct email id"
+ValidationExpression="\w+([-+.']\w+)*@\w+([-.]\w+)*\.\w+([.]\w+)*"></asp:RegularExpressionValidator>
+	<br />
+Age:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&n bsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;         	<asp:TextBox ID="TextBox4" runat="server" TextMode="Number"></asp:TextBox>
+	<asp:RequiredFieldValidator ID="RequiredFieldValidator4" runat="server"
+ControlToValidate="TextBox4" ErrorMessage="Empty"></asp:RequiredFieldValidator>
+&nbsp;<asp:RangeValidator ID="RangeValidator1" runat="server"
+ControlToValidate="TextBox4" ErrorMessage="Enter age between 18 to 30"
+MaximumValue="30" MinimumValue="18"></asp:RangeValidator>
+	<br />
+<asp:Button ID="Button1" runat="server" Text="Submit" /></div>
+	</form>
+</body></html>
+
+b). Create Web Form to demonstrate use of Adrotator Control. 
+Code:
+Inside xml file:
+<?xml version="1.0" encoding="utf-8" ?>
+<Advertisements>
+<Ad>	
+<ImageUrl>tulip.jpg</ImageUrl>
+<AlternateText>Invalid</AlternateText>
+<NavigateUrl></NavigateUrl>
+</Ad>
+<Ad>
+<ImageUrl>sakura.jpg</ImageUrl>
+<AlternateText>Invalid</AlternateText>
+<NavigateUrl></NavigateUrl>
+</Ad>
+</Advertisements>
+
+Practical – 5
+A)Create Web Form to demonstrate use of Website Navigation controls. 
+
+Code:
+<%@PageLanguage="C#"AutoEventWireup="true"CodeFile="Home.aspx.cs"Inherits="Home"%>
+
+<!DOCTYPEhtml>
+
+<htmlxmlns="http://www.w3.org/1999/xhtml">
+<headrunat="server">
+<title></title>
+</head>
+<body>
+<formid="form1"runat="server">
+<div>
+<asp:LabelID="Label1"runat="server"Text="Home page"></asp:Label>
+<br/>
+<br/>
+<asp:SiteMapPathID="SiteMapPath1"runat="server"Font-Names="Verdana"Font-Size="0.8em"PathSeparator=" : ">
+<CurrentNodeStyleForeColor="#333333"/>
+<NodeStyleFont-Bold="True"ForeColor="#990000"/>
+<PathSeparatorStyleFont-Bold="True"ForeColor="#990000"/>
+<RootNodeStyleFont-Bold="True"ForeColor="#FF8000"/>
+</asp:SiteMapPath>
+<br/>
+<br/>
+<asp:MenuID="Menu1"runat="server"DataSourceID="SiteMapDataSource1">
+</asp:Menu>
+<br/>
+<asp:SiteMapDataSourceID="SiteMapDataSource1"runat="server"/>
+<br/>
+</div>
+<asp:LabelID="Label2"runat="server"Text="Sanika.T010"></asp:Label>
+</form>
+</body>
+</html>
+
+B)Create a Web application to demonstrate use of Master Page and content page. 
+
+Code:
+<%@MasterLanguage="C#"AutoEventWireup="true"CodeBehind="Site1.master.cs"Inherits="WebApplication10.Site1"%>
+
+<!DOCTYPEhtml>
+
+<html>
+<headrunat="server">
+<title>Advanced Web Development</title>
+<asp:ContentPlaceHolderID="head"runat="server">
+</asp:ContentPlaceHolder>
+</head>
+<body>
+<headerid="header"></header>
+<h1>MASTER PAGE</h1>
+<formid="form1"runat="server">
+<div>
+<asp:ContentPlaceHolderID="ContentPlaceHolder1"runat="server">
+</asp:ContentPlaceHolder>
+</div>
+</form>
+<footerid="footer"></footer>
+    Copyright @Sanika Gawade
+</body>
+</html>
+
+C.) Create a Web application to demonstrate various states of ASP.NET Pages. 
+WebForm1.aspx.cs 
+using System; 
+using System.Collections.Generic; 
+using System.Linq; 
+using System.Web; 
+using System.Web.UI; 
+using System.Web.UI.WebControls; 
+namespace Prac5c
+{ 
+public partial class WebForm1 : System.Web.UI.Page 
+{ 
+protected void Page_Load(object sender, EventArgs e) 
+{ 
+if(IsPostBack) 
+{ 
+int viewStateVal = Convert.ToInt32(ViewState["count"]) + 1; 
+Label2.Text ="ViewState= " +viewStateVal.ToString(); 
+} 
+else 
+{ 
+ViewState["count"] = 1; 
+} 
+} 
+protected void Button1_Click(object sender, EventArgs e) 
+{ 
+Label1.Text = ViewState["count"].ToString(); 
+} 
+protected void Button2_Click(object sender, EventArgs e) 
+{ 
+HttpCookie h = new HttpCookie("name"); 
+h.Value = TextBox1.Text; 
+Response.Cookies.Add(h); 
+Response.Redirect("Webform2.aspx"); 
+} 
+} 
+}
+
+WebForm2.aspx.cs
+using System; 
+using System.Collections.Generic; 
+using System.Linq; 
+using System.Web; 
+using System.Web.UI; 
+using System.Web.UI.WebControls; 
+namespace Prac5c 
+{ 	
+public partial class WebForm2 : System.Web.UI.Page 
+{ 
+protected void Page_Load(object sender, EventArgs e) 
+{ 
+if (Request.Cookies["name"]!=null) 
+{ 
+Response.Write("Welcome "+Request.Cookies["name"].Value); 
+} 
+} 
+} 
+} 
+
+Practical – 6
+A.)Create a web application to display Using Disconnected to Data Access and Databinding using GridView.
+databind.aspx:
+<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="databind.aspx.cs"
+Inherits="databind.WebForm1" %>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head runat="server">
+ <title></title>
+</head>
+<body>
+ <form id="form1" runat="server">
+ <div>
+ <asp:TextBox ID="TextBox1" Text='<%# textdata%>' runat="server" Height="80px"
+TextMode="MultiLine"></asp:TextBox>
+ <asp:TextBox ID="TextBox2" runat="server" AutoPostBack="True"
+OnTextChanged="TextBox2_TextChanged"></asp:TextBox>
+ </div>
+ </form>
+</body>
+</html>
+databind.aspx.cs:
+using System;
+namespace databind {
+ public partial class WebForm1 : System.Web.UI.Page {
+ public string textdata;
+ protected void Page_Load(object sender, EventArgs e){}
+ protected void TextBox2_TextChanged(object sender, EventArgs e){
+ textdata = TextBox2.Text;
+ this.DataBind();
+ }
+ }
+}
+
+PRACTICAL NO-7
+database.aspx:
+<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="database.aspx.cs"
+Inherits="WebApplication7.database" %>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head runat="server">
+ <title></title>
+</head>
+<body>
+ <form id="form1" runat="server">
+ <div>
+ ID:
+ <asp:TextBox ID="txt_id" runat="server"></asp:TextBox>
+ <br />
+ Name:
+<asp:TextBox ID="txt_name" runat="server"></asp:TextBox>
+ <br />
+ <br />
+ <asp:Button ID="btn_id" runat="server" OnClick="btn_id_Click" Text="Insert" />
+&nbsp;<asp:Button ID="btn_update" runat="server" OnClick="btn_update_Click" Text="Update" />
+&nbsp;<asp:Button ID="btn_del" runat="server" OnClick="btn_del_Click" Text="Delete" />
+&nbsp;<asp:Button ID="btn_reset" runat="server" OnClick="txt_reset_Click" Text="Reset" />
+ <br />
+ <br />
+ <asp:GridView ID="GridView1" runat="server">
+ </asp:GridView>
+ </div>
+ </form>
+</body>
+</html>
+dbo.Table:
+CREATE TABLE [dbo].[Table] (
+ [Id] INT NOT NULL,
+ [Name] VARCHAR (50) NOT NULL
+);
+database.aspx.cs:
+using System;
+namespace WebApplication7 {
+ public partial class database : System.Web.UI.Page {
+ protected void Page_Load(object sender, EventArgs e)
+ {
+ SqlConnection con = new SqlConnection();
+ con.ConnectionString = "Data
+Source=(LocalDB)\\MSSQLLocalDB;AttachDbFilename=C:\\Users\\SONU\\Documents\\textdb.mdf;Integrated
+Security=True;Connect Timeout=30";
+ con.Open();
+ SqlCommand cmd = new SqlCommand("Select * from [Table]", con);
+DataSet ds = new DataSet();
+ SqlDataAdapter ad = new SqlDataAdapter(cmd);
+ ad.Fill(ds);
+ GridView1.DataSource = ds.Tables[0];
+ GridView1.DataBind();
+ }
+ protected void txt_reset_Click(object sender, EventArgs e)
+ {
+ txt_id.Text = "";
+ txt_name.Text = "";
+ }
+ protected void btn_id_Click(object sender, EventArgs e)
+ {
+ SqlConnection con = new SqlConnection();
+ con.ConnectionString = "Data
+Source=(LocalDB)\\MSSQLLocalDB;AttachDbFilename=C:\\Users\\SONU\\Documents\\textdb.mdf;Integrated
+Security=True;Connect Timeout=30";
+ con.Open();
+ SqlCommand cmd = new SqlCommand("insert into [Table](Id, Name) values('" + txt_id.Text + "', '" +
+txt_name.Text + "')", con);
+ cmd.ExecuteNonQuery();
+ con.Close();
+ }
+ protected void btn_update_Click(object sender, EventArgs e)
+ {
+ SqlConnection con = new SqlConnection();
+ con.ConnectionString = "Data
+Source=(LocalDB)\\MSSQLLocalDB;AttachDbFilename=C:\\Users\\SONU\\Documents\\textdb.mdf;Integrated
+Security=True;Connect Timeout=30";
+ con.Open();
+SqlCommand cmd = new SqlCommand("update [Table] set Name = '" + txt_name.Text + "' where Id = '"
++ txt_id.Text + "'", con);
+ cmd.ExecuteNonQuery();
+ con.Close();
+ }
+ protected void btn_del_Click(object sender, EventArgs e)
+ {
+ SqlConnection con = new SqlConnection();
+ con.ConnectionString = "Data
+Source=(LocalDB)\\MSSQLLocalDB;AttachDbFilename=C:\\Users\\SONU\\Documents\\textdb.mdf;Integrated
+Security=True;Connect Timeout=30";
+ con.Open();
+ SqlCommand cmd = new SqlCommand("delete from [Table] where Id = '" + txt_id.Text + "'", con);
+ cmd.ExecuteNonQuery();
+ con.Close();
+ }
+ }
+}
+SqlCommand cmd = new SqlCommand("update [Table] set Name = '" + txt_name.Text + "' where Id = '"
++ txt_id.Text + "'", con);
+ cmd.ExecuteNonQuery();
+ con.Close();
+ }
+ protected void btn_del_Click(object sender, EventArgs e)
+ {
+ SqlConnection con = new SqlConnection();
+ con.ConnectionString = "Data
+Source=(LocalDB)\\MSSQLLocalDB;AttachDbFilename=C:\\Users\\SONU\\Documents\\textdb.mdf;Integrated
+Security=True;Connect Timeout=30";
+ con.Open();
+ SqlCommand cmd = new SqlCommand("delete from [Table] where Id = '" + txt_id.Text + "'", con);
+ cmd.ExecuteNonQuery();
+ con.Close();
+ }
+ }
+}
+
+Practical – 8
+B.)Create a web application for user defined exception handling
+Code:
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Web;
+using System.Web.UI;
+using System.Web.UI.WebControls;
+
+namespace WebApplication2
+{
+    public class InvalidAgeException : Exception
+    {
+        public InvalidAgeException(String message)
+            : base(message)
+        {
+
+        }
+    }
+    public partial class WebForm1 : System.Web.UI.Page
+    {
+        protected void Page_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        protected void T
